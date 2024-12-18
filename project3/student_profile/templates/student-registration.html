@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'style/registration1.css' %}">
+</head>
+<body>
+    <div class="registration-container">
+        <div class="registration-box">
+            <h2 class="registration-title">STUDENT REGISTRATION FORM</h2>
+            <form method="post" action="{% url 'student-register' %}">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="USERNAME" class="registration-input" required>
+                <input type="email" name="email" placeholder="EMAIL" class="registration-input" required>
+                <input type="password" name="password1" placeholder="PASSWORD" class="registration-input" required>
+                <input type="password" name="password2" placeholder="CONFIRM PASSWORD" class="registration-input" required>
+                <div class="registration-actions">
+                    <button type="submit" class="register-button">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

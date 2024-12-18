@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All lector dashboard</title>
+    <link rel="stylesheet" href="{% static 'style/dashboard1.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="{% url 'lector-profile-edit' %}">Profile</a></li>
+            <li><a href="{% url 'lector-logout' %}">Logout</a></li>
+            <li><a href="{% url 'lector_personal_dashboard' %}">My Courses</a></li>
+        </ul>
+        <div class="user-info">
+            <span>Welcome Lector:  {{ user.username }}</span>
+        </div>
+     <!--    <pre>{{ user|pprint }}</pre>-->
+
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h1>All Courses</h1>
+
+        <!-- Courses Section -->
+        <div class="courses-container">
+            {% if courses %}
+                {% for course in courses %}
+                    <div class="course-box">
+                        <h2 class="course-title">{{ course.title }}</h2>
+                        <p class="course-author"><strong>Author:</strong> {{ course.author.username }}</p>
+                        <p class="course-description"><strong>Description:</strong>{{ course.description }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No courses have been created yet.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

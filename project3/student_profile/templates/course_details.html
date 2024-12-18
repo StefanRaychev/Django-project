@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ course.title }} - Course Page</title>
+    <link rel="stylesheet" href="{% static 'style/course-detail1.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="{% url 'student-profile-edit-page' %}">Profile</a></li>
+            <li><a href="{% url 'student-logout-register' %}">Logout</a></li>
+            <li><a href="{% url 'student-personal-dashboard' %}">My Courses</a></li>
+        </ul>
+        <div class="user-info">
+            <span>Welcome {{ user.username }}, you are in "{{ course.title }}" course</span>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h1>Course: {{ course.title }}</h1>
+        <p><strong>Description:</strong> {{ course.description }}</p>
+
+        <p><strong>Score:</strong> {{ score|default:"Not yet graded" }}</p>
+
+        <!-- Textbooks Section -->
+        <div class="materials-section">
+            <h2>Textbooks</h2>
+            {% if course.textbook_files.all %}
+                {% for textbook in course.textbook_files.all %}
+                    <div class="material-item" style="margin-bottom: 10px;">
+                        <a href="{{ textbook.file.url }}" target="_blank" >{{ forloop.counter }}. {{ textbook.file_name }}</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No textbooks uploaded yet.</p>
+            {% endif %}
+        </div>
+
+        <!-- Homeworks Section -->
+<div class="materials-section">
+    <h2>Homeworks</h2>
+
+    {% if course.homework_files.all %}
+        <ul>
+            {% for homework in course.homework_files.all %}
+                {% if homework.uploaded_by == user %}
+                    <div class="material-item" style="margin-bottom: 10px;">
+                        <a href="{{ homework.file.url }}" target="_blank">View or Download: {{ homework.file_name }}</a>
+                        <!-- Show delete button only for logged-in user's homework -->
+                        <form method="post" action="{% url 'delete-homework' homework.id %}" class="delete-form" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn delete-btn">Delete Homework</button>
+                        </form>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No homeworks uploaded yet.</p>
+    {% endif %}
+</div>
+            <form method="post" enctype="multipart/form-data" action="{% url 'upload-homework' course.pk %}">
+                {% csrf_token %}
+                <input type="hidden" name="student_id" value="{{ request.user.id }}"> <!-- Assuming the logged-in user is the student -->
+                <input type="file" name="homeworks" multiple class="file-input">
+                <button type="submit" class="btn upload-btn">Upload Homeworks</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

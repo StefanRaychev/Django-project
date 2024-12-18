@@ -1,0 +1,75 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    color: #333; /* Dark gray text color */
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    background-color: #ffffff; /* White background for the content box */
+    padding: 30px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a professional look */
+    max-width: 400px; /* Limit the width of the container */
+    width: 90%; /* Responsive width for smaller screens */
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 24px;
+    color: #cc0000; /* Red for warning */
+    margin-bottom: 10px;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 16px;
+    color: #555; /* Slightly lighter gray for the description */
+    margin-bottom: 20px;
+}
+
+/* Buttons Styling */
+form .btn.delete,
+a.btn.cancel {
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline for the cancel button */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
+}
+
+/* Delete Button */
+form .btn.delete {
+    background-color: #cc0000; /* Red background for delete */
+    color: #ffffff; /* White text */
+    border: none;
+}
+
+form .btn.delete:hover {
+    background-color: #990000; /* Darker red on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Cancel Button */
+a.btn.cancel {
+    background-color: #ccc; /* Gray background for cancel */
+    color: #333; /* Dark gray text */
+    margin-left: 10px; /* Space between buttons */
+}
+
+a.btn.cancel:hover {
+    background-color: #aaa; /* Darker gray on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}

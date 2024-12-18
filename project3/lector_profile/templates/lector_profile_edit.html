@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="{% static 'style/profile-edit1.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- Edit Profile Form -->
+        <div class="edit-profile-container">
+            <h2>Edit Student Profile</h2>
+            <form method="post">
+                {% csrf_token %}
+
+                <!-- Username Field -->
+                <div>
+                    <label for="username">Username:</label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <p class="error-message active">{{ form.username.errors|join:" " }}</p>
+                    {% endif %}
+                </div>
+
+                <!-- Email Field -->
+                <div>
+                    <label for="email">Email address:</label>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                        <p class="error-message active">{{ form.email.errors|join:" " }}</p>
+                    {% endif %}
+                </div>
+
+                <!-- Password Field -->
+                <div>
+                    <label for="password">Password:</label>
+                    {{ form.password1 }}
+                    {% if form.password1.errors %}
+                        <p class="error-message active">{{ form.password1.errors|join:" " }}</p>
+                    {% endif %}
+                </div>
+
+                <!-- Password Confirmation Field -->
+                <div>
+                    <label for="password_confirmation">Password confirmation:</label>
+                    {{ form.password2 }}
+                    {% if form.password2.errors %}
+                        <p class="error-message active">{{ form.password2.errors|join:" " }}</p>
+                    {% endif %}
+                </div>
+
+                <button type="submit" class="save-btn">Save Changes</button>
+            </form>
+            <!-- Delete Profile Button -->
+            <form method="get" action="{% url 'lector-profile-delete' %}">
+                <button type="submit" class="delete-btn">Delete Profile</button>
+            </form>
+        <!-- Cancel Button -->
+            <button class="cancel-btn" onclick="window.history.back()">Cancel</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector Dashboard</title>
+    <link rel="stylesheet" href="{% static 'style/personal-dashboard2.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+ <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="{% url 'lector-profile-edit' %}">Profile</a></li>
+            <li><a href="{% url 'lector-logout' %}">Logout</a></li>
+            <li><a href="{% url 'lector_dashboard' %}">All Courses</a></li>
+        </ul>
+        <div class="user-info">
+            <span>Welcome Lector:  {{ user.username }}</span>
+        </div>
+        <div>
+</div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h1>Welcome to My Courses Dashboard</h1>
+
+        <!-- Create New Course Button -->
+        <div class="create-course-container">
+            <a href="{% url 'create-course-page' %}" class="btn create-course-btn">Create New Course</a>
+        </div>
+
+        <!-- Courses Section -->
+        <div class="courses-container">
+            {% if courses %}
+                {% for course in courses %}
+                    <div class="course-box">
+                        <h2 class="course-title">{{ course.title }}</h2>
+                        <p class="course-author">Author: {{ course.author.username }}</p>
+                        <p class="course-author">Number of Enrolled Students: {{ course.students.count }}</p>
+
+
+                        <div class="course-actions">
+                            <a href="{% url 'lector-course-edit' course.pk %}" class="btn edit">Edit</a>
+                            <a href="{% url 'lector-course-detail' course.pk %}" class="btn enter">Enter</a>
+                            <a href="{% url 'delete-course' course.pk %}" class="btn delete">Delete</a>
+
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No courses created yet. Create a course to display it here.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

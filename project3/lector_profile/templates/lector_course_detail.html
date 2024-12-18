@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ course.title }} - Course Page</title>
+    <link rel="stylesheet" href="{% static 'style/course-detail1.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="{% url 'lector-profile-edit' %}">Profile</a></li>
+            <li><a href="{% url 'lector-logout' %}">Logout</a></li>
+            <li><a href="{% url 'lector_dashboard' %}">All Courses</a></li>
+        </ul>
+        <div class="user-info">
+            <span>Welcome {{ user.username }}, you are in "{{ course.title }}" course</span>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h1>Course: {{ course.title }}</h1>
+        <p><strong>Description:</strong> {{ course.description }}</p>
+
+        <!-- Enrolled Students Section -->
+        <div class="students-section">
+            <h2>Enrolled Students</h2>
+            {% if course.students.all %}
+                <ul>
+                    {% for student in course.students.all %}
+                        <li>
+                            <a href="{% url 'view-student-homework' course.pk student.pk %}">
+                                {{ student.username }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No students enrolled in this course yet.</p>
+            {% endif %}
+        </div>
+
+        <!-- Textbooks Section -->
+        <div class="materials-section">
+            <h2>Textbooks</h2>
+            {% if course.textbook_files.all %}
+                {% for textbook in course.textbook_files.all %}
+                    <div class="material-item" style="margin-bottom: 10px;">
+                        <a href="{{ textbook.file.url }}" target="_blank" >{{ forloop.counter }}. {{ textbook.file_name }}</a>
+                        <form method="post" action="{% url 'delete-textbook' textbook.id %}" class="delete-form" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn delete-btn">Delete Textbook</button>
+                        </form>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No textbooks uploaded yet.</p>
+            {% endif %}
+            <!-- Form to Upload Textbooks -->
+    <form method="post" enctype="multipart/form-data" action="{% url 'upload-textbook' course.pk %}">
+        {% csrf_token %}
+        <input type="file" name="textbooks" class="file-input">
+        <button type="submit" class="btn upload-btn">Upload Textbook</button>
+    </form>
+        </div>
+    </div>
+</body>
+</html>

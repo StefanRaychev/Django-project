@@ -1,0 +1,144 @@
+/* General Page Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Light gray background */
+    color: #333; /* Dark gray text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    background-color: #0044cc; /* Blue navigation bar */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar .nav-link {
+    color: white; /* White text for navigation links */
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.navbar .nav-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Main Content Section Styling */
+.main-content {
+    margin: 20px;
+    padding: 20px;
+    background-color: white; /* White background for content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Courses Container Styling */
+.courses-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allows multiple course boxes to align properly */
+    gap: 20px; /* Space between boxes */
+    justify-content: center;
+}
+
+/* Course Box Styling */
+.course-box {
+    background-color: #eaf4fc; /* Light blue for course box */
+    padding: 15px;
+    width: 300px; /* Fixed width for uniform size */
+    height: 150px; /* Fixed height for uniform size */
+    border: 2px solid #0044cc; /* Blue border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is spaced evenly */
+}
+
+/* Alternating Colors for Boxes */
+.course-box:nth-child(even) {
+    background-color: #fcf4ea; /* Light orange for alternating boxes */
+    border: 2px solid #cc5500; /* Orange border for alternating boxes */
+}
+
+/* Course Title Styling */
+.course-box h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #0044cc; /* Blue for title */
+    text-align: center;
+}
+
+/* Buttons for Course Actions */
+.course-actions {
+    display: flex;
+    justify-content: space-around; /* Space buttons evenly */
+    align-items: center;
+}
+
+/* Common Button Styling */
+.course-actions .btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Edit Button Styling */
+.course-actions .btn.edit {
+    background-color: #0044cc; /* Blue for Edit */
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-actions .btn.edit:hover {
+    background-color: #0033aa; /* Darker blue on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Delete Button Styling */
+.course-actions .btn.delete {
+    background-color: #cc0000; /* Red for Delete */
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-actions .btn.delete:hover {
+    background-color: #990000; /* Darker red on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.apply-btn {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.applied-btn {
+    background-color: gray;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: not-allowed;
+}

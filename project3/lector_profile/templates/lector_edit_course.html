@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Course</title>
+    <link rel="stylesheet" href="{% static 'style/create-course1.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Course</h1>
+<form method="post">
+            {% csrf_token %}
+            <div>
+                <label for="title">Course Title:</label>
+                {{ form.title }}
+            </div>
+            <div>
+                <label for="description">Course Description:</label>
+                {{ form.description }}
+            </div>
+            <button type="submit" class="btn create-btn">Save Changes</button>
+            <a href="{% url 'lector_personal_dashboard' %}" class="btn cancel-btn">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

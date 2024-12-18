@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector Dashboard</title>
+    <link rel="stylesheet" href="{% static 'style/personal-dashboard2.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="{% url 'student-profile-edit-page' %}">Profile</a></li>
+            <li><a href="{% url 'student-logout-register' %}">Logout</a></li>
+            <li><a href="{% url 'student-dashboard' %}">All Courses</a></li>
+        </ul>
+        <div class="user-info">
+            <span>Welcome, {{ user.username }}</span>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h1>Welcome to My Courses Dashboard</h1>
+
+        <div class="courses-container">
+            {% if courses %}
+                {% for course in courses %}
+                    <div class="course-box">
+                        <h2 class="course-title">{{ course.title }}</h2>
+                        <p class="course-author">Author: {{ course.author.username }}</p>
+                        <div class="course-actions">
+                            <!-- Enter Button -->
+                            <a href="{% url 'course-details' course.id %}" class="btn edit">Enter</a>
+
+                            <!-- Remove Button -->
+                            <form action="{% url 'remove-course' course.id %}" method="POST" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn delete">Remove</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No courses created yet. Apply for a course to display it here.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

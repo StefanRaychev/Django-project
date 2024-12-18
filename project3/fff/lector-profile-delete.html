@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Delete Profile</title>
+    <link rel="stylesheet" href="{% static 'style/lector-profile-delete.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Are you sure you want to delete this course?</h1>
+        <p>This action cannot be undone.</p>
+
+        <!-- Confirm Delete Button -->
+        <form method="post" action="{% url 'lector-delete-course-confirm' %}">
+            {% csrf_token %}
+            <input class="btn delete" type="submit" value="Yes, Delete">
+        </form>
+
+        <!-- Cancel Button -->
+        <a href="{% url 'lector-course-edit' %}" class="btn cancel">
+            Cancel
+        </a>
+    </div>
+</body>
+</html>

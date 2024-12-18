@@ -1,0 +1,85 @@
+/* General Page Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Light gray background */
+    color: #333; /* Dark gray text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full-screen height */
+    position: relative; /* For positioning the back link */
+}
+
+/* Back Link Styling */
+.back-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: #0044cc; /* Blue text for the link */
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between arrow and text */
+}
+
+.back-link:hover {
+    color: #0033aa; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Centering the Form Container */
+.form-container {
+    text-align: center; /* Center text alignment */
+    width: 100%;
+    max-width: 400px; /* Limit the form container width */
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Title Styling */
+.form-title {
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 24px; /* Larger font size */
+    color: #0044cc; /* Blue color to match the button */
+    text-transform: uppercase; /* Make title uppercase */
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form fields */
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="checkbox"],
+form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box;
+}
+
+/* Submit Button Styling */
+form input[type="submit"] {
+    background-color: #0044cc; /* Blue button */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0033aa; /* Darker blue on hover */
+}

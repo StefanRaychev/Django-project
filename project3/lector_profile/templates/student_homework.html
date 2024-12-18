@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ student.username }} - Homeworks</title>
+    <link rel="stylesheet" href="{% static 'style/student-homework1.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="{% url 'lector-profile-edit' %}">Profile</a></li>
+            <li><a href="{% url 'lector-logout' %}">Logout</a></li>
+            <li><a href="{% url 'lector-course-detail' course.pk %}">Back to Course</a></li>
+        </ul>
+        <div class="user-info">
+            <span>Welcome {{ user.username }}</span>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h1>Student: {{ student.username }}</h1>
+        <p><strong>Course:</strong> {{ course.title }}</p>
+
+        <!-- Homework Section -->
+        <div class="materials-section">
+            <h2>Homework</h2>
+            {% if has_homework %}
+                {% for homework in homeworks %}
+                    <div class="material-item" style="margin-bottom: 10px;">
+                        <a href="{{ homework.file.url }}" target="_blank">View or Download: {{ homework.file_name }}</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No homework submitted yet.</p>
+            {% endif %}
+        </div>
+        <!-- Score Section -->
+            <div class="score-section">
+                <form method="post" action="{% url 'update-student-score' course.pk student.pk %}">
+                    {% csrf_token %}
+                    <label for="score"><strong>Score:</strong></label>
+                    <input type="number" id="score" name="score"
+                           value="{{ score|default:'' }}">
+
+                    <button type="submit" class="btn save-btn">Save Score</button>
+                </form>
+            </div>
+    </div>
+</body>
+</html>

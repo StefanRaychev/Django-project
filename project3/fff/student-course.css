@@ -1,0 +1,59 @@
+/* General Page Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Light gray background */
+    color: #333; /* Dark gray text */
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #0044cc; /* Blue background */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar .back-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.navbar .back-link:hover {
+    text-decoration: underline;
+}
+
+/* Header Styling */
+.course-header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #eaf4fc; /* Light blue background */
+    border-bottom: 2px solid #0044cc; /* Blue border */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.course-header .course-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #0044cc; /* Blue title color */
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Main Content Section */
+.course-content {
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    min-height: 200px; /* Minimum height for content area */
+    color: #666; /* Subtle gray text */
+}
+

@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture Profile Edit</title>
+    <link rel="stylesheet" href="{% static 'style/lecture-profile-edit.css' %}">
+</head>
+<body>
+    <!-- Back to Dashboard Link -->
+    <a href="{% url 'lector-dashboard' %}" class="back-link">
+        &larr; Back to Dashboard
+    </a>
+
+    <!-- Centered Form Container -->
+    <div class="form-container">
+        <!-- Title Above the Form -->
+        <h1 class="form-title">LECTURE PROFILE EDIT</h1>
+
+        <!-- Form Section -->
+        <section id="edit-profile-page" class="content auth">
+            <form id="edit-profile" method="post">
+                {% csrf_token %}
+                {{ profile_edit_form }}
+
+                <!-- Update Profile Button -->
+                <input class="btn submit" type="submit" value="Update Profile">
+            </form>
+            !-- Delete Profile Button -->
+        <form id="delete-profile" method="post" action="{% url 'lector-delete-profile' %}">
+            {% csrf_token %}
+        <input class="btn delete" type="submit" value="Delete Profile">
+    </form>
+        </section>
+    </div>
+</body>
+</html>
