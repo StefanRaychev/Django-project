@@ -1,0 +1,95 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FF8C42; /* Bright orange background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    background-color: #D9534F; /* Red background */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px; /* Fixed width for consistency */
+}
+
+/* Title Styling */
+.container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* White title text */
+    margin-bottom: 20px;
+}
+
+/* Form Fields */
+.container form div {
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%; /* Ensure full width */
+}
+
+.container form label {
+    display: block;
+    font-size: 16px;
+    color: white; /* White labels */
+    margin-bottom: 5px;
+}
+
+.container form input,
+.container form textarea {
+    width: 100%; /* Match the container width */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FADBD8; /* Light red input background */
+    font-size: 16px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.container form input:focus,
+.container form textarea:focus {
+    outline: 2px solid #FFC074; /* Highlight focused fields */
+}
+
+/* Button Styling */
+.btn {
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%; /* Ensure buttons match the width */
+    margin: 10px 0;
+    cursor: pointer;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Create Button */
+.create-btn {
+    background-color: #FFC074; /* Light orange button */
+    color: white;
+    border: none;
+}
+
+.create-btn:hover {
+    background-color: #FFA549; /* Slightly darker orange on hover */
+}
+
+/* Cancel Button */
+.cancel-btn {
+    background-color: #333; /* Black button */
+    color: white;
+    border: none;
+}
+
+.cancel-btn:hover {
+    background-color: #111; /* Darker black on hover */
+}

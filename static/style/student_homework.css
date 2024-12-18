@@ -1,0 +1,120 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-right: 20px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .user-info {
+    font-size: 14px;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-content h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.main-content p {
+    margin: 10px 0;
+}
+
+/* Materials Section */
+.materials-section {
+    margin-top: 20px;
+}
+
+.materials-section h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.materials-section .material-item {
+    margin-bottom: 10px;
+}
+
+.materials-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.materials-section a:hover {
+    text-decoration: underline;
+}
+
+/* Form Styles */
+form {
+    margin-top: 15px;
+}
+
+form label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+form input {
+    padding: 5px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+form button {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}

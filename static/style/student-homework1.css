@@ -1,0 +1,130 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FF8C42; /* Bright orange background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main Content Container */
+.main-content {
+    background-color: #D9534F; /* Red background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    text-align: center;
+}
+
+/* Title Styling */
+.main-content h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: white; /* White title text */
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    color: white;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #333; /* Black navigation bar */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.user-info {
+    color: white;
+    font-size: 16px;
+}
+
+/* Materials Section */
+.materials-section {
+    margin-top: 20px;
+}
+
+.materials-section h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.material-item {
+    background-color: #FADBD8; /* Light red input background */
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.material-item a {
+    color: #D9534F; /* Red text for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.material-item a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+button {
+    background-color: #FFC074; /* Light orange button */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FFA549; /* Slightly darker orange on hover */
+}
+
+.save-btn {
+    background-color: #FFC074; /* Light orange button */
+}
+
+.delete-btn {
+    background-color: #333; /* Black button for delete */
+}
+
+.delete-btn:hover {
+    background-color: #111; /* Darker black on hover */
+}

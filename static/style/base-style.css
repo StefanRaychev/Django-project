@@ -1,0 +1,32 @@
+/* General Body Style */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9; /* Light background color for the page */
+  color: #333; /* Text color */
+}
+
+/* Navigation Bar Style */
+.navbar {
+  background-color: #0044cc; /* Navigation bar color */
+  padding: 1rem;
+  display: flex;
+  justify-content: center; /* Center the navigation links */
+}
+
+.navbar .nav-link {
+  color: white; /* Text color for links */
+  text-decoration: none;
+  margin: 0 15px; /* Space between links */
+  font-size: 1.2rem;
+}
+
+.navbar .nav-link:hover {
+  text-decoration: underline; /* Underline effect on hover */
+}
+
+/* Main Content Style */
+.main-content {
+  text-align: center; /* Center the text in the main content */
+  padding: 2rem;
+}

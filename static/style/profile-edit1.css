@@ -1,0 +1,121 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FF8C42; /* Bright orange background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Edit Profile Container */
+.edit-profile-container {
+    background-color: #D9534F; /* Red background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+}
+
+/* Title Styling */
+.edit-profile-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* White title text */
+    margin-bottom: 20px;
+}
+
+/* Form Fields */
+.edit-profile-container form input,
+.edit-profile-container form select,
+.edit-profile-container form textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #FADBD8; /* Light red input background */
+    font-size: 16px;
+}
+
+.edit-profile-container form input:focus,
+.edit-profile-container form select:focus,
+.edit-profile-container form textarea:focus {
+    outline: 2px solid #FFC074; /* Highlight focused fields */
+}
+
+/* Save Button */
+.save-btn {
+    background-color: #FFC074; /* Light orange button */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.save-btn:hover {
+    background-color: #FFA549; /* Slightly darker orange on hover */
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #333; /* Black button for delete */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.delete-btn:hover {
+    background-color: #111; /* Darker black on hover */
+}
+
+/* Error Messages */
+.error-message {
+    color:blue; /* Red text for errors */
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: left;
+    display: none; /* Hidden by default */
+}
+
+.error-message.active {
+    display: block; /* Show only when validation fails */
+}
+
+.cancel-btn {
+    background-color: #777; /* Gray color for the Cancel button */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.cancel-btn:hover {
+    background-color: #555; /* Darker gray on hover */
+}

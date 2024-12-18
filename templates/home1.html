@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style/home1.css' %}" />
+    <title>Education App</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left Section: Lector Login -->
+      <div class="section lector">
+        <h2>Lector Login</h2>
+        <form action="{% url 'lector-login' %}" method="post">
+          {% csrf_token %}
+          <input type="text" name="username" placeholder="Username" required />
+          <input type="password" name="password" placeholder="Password" required />
+          <button type="submit">Log In</button>
+        </form>
+        <a href="#" class="forgot-password">Forgotten Password?</a>
+        <p>Don't have an account? <a href="{% url 'lector-register' %}">Register</a></p>
+      </div>
+
+      <!-- Center Section: Logo -->
+      <div class="section logo">
+        <img src="{% static 'images/school-logo.bmp' %}" alt="School Logo" />
+        <h1>SCHOOL DEMO</h1>
+      </div>
+
+      <!-- Right Section: Student Login -->
+      <div class="section student">
+        <h2>Student Login</h2>
+        <form action="{% url 'student-login' %}" method="post">
+          {% csrf_token %}
+          <input type="text" name="username" placeholder="Username" required />
+          <input type="password" name="password" placeholder="Password" required />
+          <button type="submit">Log In</button>
+        </form>
+        <a href="#" class="forgot-password">Forgotten Password?</a>
+        <p>Don't have an account? <a href="{% url 'student-register' %}">Register</a></p>
+      </div>
+    </div>
+  </body>
+</html>

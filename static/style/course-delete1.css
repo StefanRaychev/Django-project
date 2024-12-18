@@ -1,0 +1,78 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FF8C42; /* Bright orange background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    background-color: #D9534F; /* Red background */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px; /* Fixed width for consistency */
+}
+
+/* Title Styling */
+.container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* White title text */
+    margin-bottom: 20px;
+}
+
+/* Paragraph Styling */
+.container p {
+    font-size: 16px;
+    color: white; /* White text for paragraphs */
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Highlighted Text Styling */
+.container p strong {
+    color: #FFC074; /* Highlighted light orange text */
+}
+
+/* Button Styling */
+.btn {
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%; /* Ensure buttons match the width */
+    margin: 10px 0;
+    cursor: pointer;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #333; /* Black button for delete */
+    color: white;
+    border: none;
+}
+
+.delete-btn:hover {
+    background-color: #111; /* Darker black on hover */
+}
+
+/* Cancel Button */
+.cancel-btn {
+    background-color: #FFC074; /* Light orange button */
+    color: white;
+    border: none;
+}
+
+.cancel-btn:hover {
+    background-color: #FFA549; /* Slightly darker orange on hover */
+}

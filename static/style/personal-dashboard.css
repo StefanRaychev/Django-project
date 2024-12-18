@@ -1,0 +1,154 @@
+/* General reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.user-info {
+    font-size: 16px;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.main-content h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Create New Course Button */
+.create-course-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.create-course-btn {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.create-course-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Courses Section */
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.course-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.course-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.course-author {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.course-actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.course-actions .btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.course-actions .edit {
+    background-color: #28a745;
+    color: white;
+}
+
+.course-actions .delete:hover {
+    background-color: #c82333;
+}
+
+.apply-btn {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.applied-btn {
+    background-color: gray;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: not-allowed;
+}
